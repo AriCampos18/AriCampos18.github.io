@@ -1,22 +1,28 @@
 import Pagina from "./componentes/layouts/Pagina.jsx";
+import TelaCadProdutos from "./componentes/Telas/TelaCadProdutos.jsx";
+import TelaCadCategorias from "./componentes/Telas//TelaCadClientes.jsx";
+import TelaCadFornecedores from "./componentes/Telas/TelaCadFornecedores.jsx";
+import TelaCadClientes from "./componentes/Telas/TelaCadCategorias.jsx";
+
 
 function App() {
   return (
     <div className="App">
+      
       <Pagina>
-        <h1> Esta é a pagina de cadastro de cliente</h1>
+        <TelaCadClientes/>
       </Pagina>
 
       <Pagina>
-        <h1> Esta é a pagina de cadastro de produtos</h1>
+        <TelaCadProdutos/>
       </Pagina>
 
       <Pagina>
-        <h1> Esta é a pagina de cadastro de fornecedores</h1>
+        <TelaCadFornecedores/>
       </Pagina>
 
       <Pagina>
-        <h1> Esta é a pagina de cadastro de categorias</h1>
+        <TelaCadCategorias/>
       </Pagina>
     </div>
   );
