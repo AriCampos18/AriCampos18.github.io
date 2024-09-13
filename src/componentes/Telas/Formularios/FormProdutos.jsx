@@ -3,10 +3,35 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import InputGroup from 'react-bootstrap/InputGroup';
+import {useState} from 'react';
 
 export default function FormProdutos(props){
 
-    return (
+  const [produto, setProduto]=useState({
+    codigo:0,
+    descricao:"",
+    precoCusto:0,
+    precoVenda:0,
+    qtdeEstoque:0,
+    urlimagem:"",
+    dataValidade:""
+  });
+
+  const [formValidado, setFormValidado]=useState(false);
+
+  function manipularSubmissao(evento){
+    const form = evento.currentTarget;
+    if(form.checkValidity()){
+      //cadastrar produto
+    }
+    else{
+      setFormValidado(true);
+    }
+    evento.preventDefault();
+    evento.stopPropagation();
+  }
+
+  return (
         <Form>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="formGridCodigo">
@@ -26,12 +51,16 @@ export default function FormProdutos(props){
           </Form.Group>
 
           <InputGroup className="mb-3">
-                <InputGroup.Text id="basic-addon1">R$</InputGroup.Text>
+                <InputGroup.Text id="precoCusto">R$</InputGroup.Text>
                 <Form.Control
+                type="text"
                 placeholder="Preço de Custo"
                 aria-label="Preço de Custo"
                 aria-describedby="basic-addon1"
+                value={produto.precoCusto}
+                required
                 />
+                
             </InputGroup>
 
             <InputGroup className="mb-3">
@@ -60,6 +89,10 @@ export default function FormProdutos(props){
     
           <Button variant="primary" type="submit">
             Submit
+          </Button>
+
+          <Button variant="primary" type="back">
+            Voltar
           </Button>
         </Form>
       );
