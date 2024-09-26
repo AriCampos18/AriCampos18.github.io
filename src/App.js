@@ -1,29 +1,23 @@
-import Pagina from "./componentes/layouts/Pagina.jsx";
-import TelaCadProdutos from "./componentes/Telas/TelaCadProdutos.jsx";
-import TelaCadCategorias from "./componentes/Telas//TelaCadClientes.jsx";
-import TelaCadFornecedores from "./componentes/Telas/TelaCadFornecedores.jsx";
-import TelaCadClientes from "./componentes/Telas/TelaCadCategorias.jsx";
-
+import Pagina from "./componentes/layouts/Pagina";
+import TelaCadastroProduto from "./componentes/Telas/TelaCadProdutos";
+import TelaCadastroCategoria from "./componentes/Telas/TelaCadCategorias";
+import TelaMenu from "./componentes/Telas/TelaMenu";
+import Tela404 from "./componentes/Telas/Tela404";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      
-      <Pagina>
-        <TelaCadClientes/>
-      </Pagina>
-
-      <Pagina>
-        <TelaCadProdutos/>
-      </Pagina>
-
-      <Pagina>
-        <TelaCadFornecedores/>
-      </Pagina>
-
-      <Pagina>
-        <TelaCadCategorias/>
-      </Pagina>
+      <BrowserRouter>
+        { //A ordem das rotas é importante 
+        }
+        <Routes>
+          <Route path="/produto" element={<TelaCadastroProduto />} />
+          <Route path="/categoria" element={<TelaCadastroCategoria />} />
+          <Route path="/" element={<TelaMenu />} />
+          <Route path="*" element={<Tela404 />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

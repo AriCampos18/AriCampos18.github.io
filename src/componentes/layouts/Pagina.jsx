@@ -10,7 +10,7 @@ export default function Pagina(props){
         <>  
       
             <Container>
-                <Cabecalho titulo="Sistema ..."></Cabecalho>
+                <Cabecalho titulo="Sistema de Controle Gerencial"></Cabecalho>
                 <Menu/>
                 {
                     //filhos da pagina estao agrupados em um componente de atributo children
