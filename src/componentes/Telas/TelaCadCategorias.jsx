@@ -18,27 +18,27 @@ export default function TelaCadCategorias(props){
 
     return (
         <div>
-            <Pagina className="mt-02 mb-02 success text-center" variant="success">
-                <Alert>
+            <Pagina>
+                <Alert className="mt-02 mb-02 success text-center" variant="success">
                     <h2>
                         Cadastro de Categorias
                     </h2>
                 </Alert>
                 {
-            exibirTabela ?
-              <TabelaCategorias listaDeCategorias={listaDeCategorias}
-                              setListaDeCategorias={setListaDeCategorias}
-                              setExibirTabela={setExibirTabela}
-                              setModoEdicao={setModoEdicao}
-                              setCategoriaSelecionada={setCategoriaSelecionada}/> :
-              <FormCategorias listaDeCategorias={listaDeCategorias}
-                            setListaDeCategorias={setListaDeCategorias}
-                            setExibirTabela={setExibirTabela}
-                            categoriaSelecionada={categoriaSelecionada}
-                            setCategoriaSelecionada={setCategoriaSelecionada}
-                            modoEdicao={modoEdicao}
-                            setModoEdicao={setModoEdicao}/>
-          }
+                    exibirTabela ?
+                    <TabelaCategorias listaDeCategorias={listaDeCategorias}
+                                    setListaDeCategorias={setListaDeCategorias}
+                                    setExibirTabela={setExibirTabela}
+                                    setModoEdicao={setModoEdicao}
+                                    setCategoriaSelecionada={setCategoriaSelecionada}/> :
+                    <FormCategorias listaDeCategorias={listaDeCategorias}
+                                    setListaDeCategorias={setListaDeCategorias}
+                                    setExibirTabela={setExibirTabela}
+                                    categoriaSelecionada={categoriaSelecionada}
+                                    setCategoriaSelecionada={setCategoriaSelecionada}
+                                    modoEdicao={modoEdicao}
+                                    setModoEdicao={setModoEdicao}/>
+                }
             </Pagina>
         </div>
         
